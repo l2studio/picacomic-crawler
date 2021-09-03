@@ -1,0 +1,41 @@
+{
+  "name": "@l2studio/picacomic-crawler",
+  "version": "0.1.0",
+  "description": "A picacomic cosplay crawler microservice",
+  "repository": "https://github.com/l2studio/picacomic-crawler.git",
+  "author": "lgou2w <lgou2w@hotmail.com>",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc",
+    "dev": "cross-env DEBUG='lgou2w:*' NODE_ENV=development ts-node -T -P tsconfig.json src/index.ts",
+    "start": "cross-env NODE_ENV=production node dist/index.js",
+    "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore .",
+    "lint:fix": "eslint --fix --ext .js,.ts,.vue --ignore-path .gitignore ."
+  },
+  "dependencies": {
+    "@l2studio/picacomic-api": "^0.1.4",
+    "cross-env": "^7.0.3",
+    "debug": "^4.3.2",
+    "dotenv": "^10.0.0",
+    "mongoose": "^6.0.4",
+    "node-cron": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.17.14",
+    "@types/node-cron": "^2.0.4",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.2"
+  }
+}
