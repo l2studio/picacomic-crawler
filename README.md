@@ -1,3 +1,3 @@
-# L2 Studio - Picacomic Crawler
+# L2 Studio - PicaComic Crawler
 
 A picacomic cosplay crawler microservice
