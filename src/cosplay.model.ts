@@ -17,7 +17,6 @@ export interface CosplayDocument extends Document {
   description: string
   thumb: string
   tags: string[]
-  erotic: boolean
   totalPages: number
   totalEpisodes: number
   episodes: Types.DocumentArray<CosplayEpisodeDocument>
@@ -71,10 +70,6 @@ const CosplaySchema = new Schema<CosplayDocument>({
   },
   tags: {
     type: [String],
-    required: true
-  },
-  erotic: {
-    type: Boolean,
     required: true
   },
   totalPages: {

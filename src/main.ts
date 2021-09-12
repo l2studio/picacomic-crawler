@@ -121,7 +121,6 @@ async function fetchComicDataAndUnion (comic: Comic): Promise<ComicDataAndUnion>
 /// 数据库交互
 
 const TAG_COSPLAY = 'COSPLAY'
-const TAG_NO_EROTIC = '無H內容'
 
 async function saveComic (comic: ComicDataAndUnion): Promise<CosplayDocument> {
   debug('查询 Cosplay 数据：', comic._id)
@@ -131,7 +130,6 @@ async function saveComic (comic: ComicDataAndUnion): Promise<CosplayDocument> {
     debug('Cosplay 模型 %d 已录入，日期：', comic.title, cosplay._id.getTimestamp().toISOString())
     return cosplay
   }
-  const erotic = !comic.tags.includes(TAG_NO_EROTIC)
   const tags = comic.tags.filter((tag) => tag !== TAG_COSPLAY)
   cosplay = new CosplayModel({
     identify,
@@ -140,7 +138,6 @@ async function saveComic (comic: ComicDataAndUnion): Promise<CosplayDocument> {
     description: comic.description || 'NULL',
     thumb: comic.thumb.path,
     tags,
-    erotic,
     totalPages: comic.pagesCount,
     totalEpisodes: comic.epsCount
   })
