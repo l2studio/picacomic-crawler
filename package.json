@@ -1,6 +1,6 @@
 {
   "name": "@l2studio/picacomic-crawler",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "A picacomic cosplay crawler microservice",
   "repository": "https://github.com/l2studio/picacomic-crawler.git",
   "author": "lgou2w <lgou2w@hotmail.com>",
