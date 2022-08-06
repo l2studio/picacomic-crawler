@@ -20,6 +20,7 @@ export interface CosplayDocument extends Document {
   totalPages: number
   totalEpisodes: number
   episodes: Types.DocumentArray<CosplayEpisodeDocument>
+  type: 'picacomic' | 'star'
 }
 
 const CosplayEpisodeSchema = new Schema<CosplayEpisodeDocument>({
@@ -82,6 +83,11 @@ const CosplaySchema = new Schema<CosplayDocument>({
   },
   episodes: {
     type: [CosplayEpisodeSchema],
+    required: true
+  },
+  type: {
+    type: String,
+    enum: ['picacomic', 'star'],
     required: true
   }
 })

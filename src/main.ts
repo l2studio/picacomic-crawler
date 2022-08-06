@@ -139,7 +139,9 @@ async function saveComic (comic: ComicDataAndUnion): Promise<CosplayDocument> {
     thumb: comic.thumb.path,
     tags,
     totalPages: comic.pagesCount,
-    totalEpisodes: comic.epsCount
+    totalEpisodes: comic.epsCount,
+    episodes: [],
+    type: 'cosplay'
   })
   for (const episode of comic.episodes) {
     const pages = episode.pages.map((page) => page.media.path)
