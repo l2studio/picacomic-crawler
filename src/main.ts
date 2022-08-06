@@ -147,7 +147,7 @@ async function saveComic (comic: ComicDataAndUnion): Promise<CosplayDocument> {
       identify: new Types.ObjectId(episode._id),
       title: episode.title,
       order: episode.order,
-      updatedAt: new Date(episode.updated_at).valueOf(),
+      updatedAt: new Date(episode.updated_at),
       pages
     })
     cosplay.episodes.push(episodeDoc)

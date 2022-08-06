@@ -5,7 +5,7 @@ export interface CosplayEpisodeDocument extends Document {
   identify: Types.ObjectId
   title: string
   order: number
-  updatedAt: number
+  updatedAt: Date
   pages: string[]
 }
 
@@ -36,7 +36,7 @@ const CosplayEpisodeSchema = new Schema<CosplayEpisodeDocument>({
     required: true
   },
   updatedAt: {
-    type: Number,
+    type: Date,
     required: true
   },
   pages: {
@@ -86,4 +86,4 @@ const CosplaySchema = new Schema<CosplayDocument>({
   }
 })
 
-export default model<CosplayDocument>('cosplays', CosplaySchema)
+export default model<CosplayDocument>('ovo_picacomics', CosplaySchema)
